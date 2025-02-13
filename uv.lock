@@ -7,10 +7,14 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "litellm" },
+    { name = "python-dotenv" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "litellm", specifier = ">=1.61.1" }]
+requires-dist = [
+    { name = "litellm", specifier = ">=1.61.1" },
+    { name = "python-dotenv", specifier = ">=1.0.1" },
+]
 
 [[package]]
 name = "aiohappyeyeballs"
