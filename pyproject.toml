@@ -7,10 +7,12 @@ authors = [
     { name = "afzalfaizi", email = "afzaalm993@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "litellm>=1.61.1",
+]
 
 [project.scripts]
-faizi = "agents_with_crewai.hello:myfunction"
+faizi = "agents_with_crewai.hello:call_gemini"
 
 [build-system]
 requires = ["hatchling"]
