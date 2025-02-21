@@ -1,0 +1,21 @@
+name: Scheduled Commit  
+on:
+  workflow_dispatch:  # Allows manual execution
+  schedule:
+    - cron: "0 12 22-25 2 *"  # Runs at 12:00 UTC on Feb 22-25, 2025
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Make a dummy commit
+        run: |
+          date > commit.txt
+          git config --global user.email "afzaldeveloper7@gmail.com"
+          git config --global user.name "Afzalfaizi"
+          git add commit.txt
+          git commit -m "Automated commit to keep streak in my absence"
+          git push https://github.com/Afzalfaizi/Agents-with-Crew-AI.git HEAD:main
